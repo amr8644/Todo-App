@@ -41,16 +41,7 @@ function addItem() {
 }
 
 function changeToLightMode() {
-  // lightMode.classList.toggle("dark-mode");
-  // header.classList.toggle("header-light-mode");
-  // inputItems.classList.toggle("items-light-mode");
   body.classList.toggle("body-light-mode");
-  // clearContainer.classList.toggle("clear-container-light-mode");
-  // const items = document.querySelectorAll(".list");
-  // items.forEach((e) => {
-
-  //   e.classList.toggle("list-light-mode");
-  // });
 }
 
 function clearInput() {
@@ -75,18 +66,6 @@ function clearAll() {
 
   localStorage.removeItem("itemList");
 }
-
-// function addToLocalStorage() {
-//   let itemList = inputItems.value;
-//   if (localStorage.getItem("itemList") === null) {
-//     itemList = [];
-//   } else {
-//     itemList = JSON.parse(localStorage.getItem("itemList"));
-//   }
-//   const listItem = inputItems.value;
-//   itemList.push(listItem);
-//   localStorage.setItem("itemList", JSON.stringify(itemList));
-// }
 
 function addToLocalStorage(id, listItem) {
   const list = { id, listItem };
@@ -126,27 +105,6 @@ function createList(id, listItem) {
   deleteBtn.addEventListener("click", deleteItem);
   listContainer.appendChild(element);
 }
-
-// function getLocalStorage() {
-//   let itemList = inputItems.value;
-//   if (localStorage.getItem("itemList") === null) {
-//     itemList = [];
-//   } else {
-//     itemList = JSON.parse(localStorage.getItem("itemList"));
-//   }
-//   itemList.forEach((todo) => {
-//     const element = document.createElement("article");
-//     element.classList.add("list");
-//     element.innerHTML = `<p class= "text">${todo}</p>
-//             <div id="btn-container">
-//               <button type="submit" class="delete-btn"> <i class="fas fa-trash"></i> </button>
-//             </div>`;
-//     const deleteBtn = element.querySelector(".delete-btn");
-//     deleteBtn.addEventListener("click", deleteItem);
-//     // Add Items To Local Storage
-//     listContainer.appendChild(element);
-//   });
-// }
 
 function removeFromLocalStorage(id) {
   let items = getLocalStorage();
