@@ -1,21 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-:root {
-  --Very-Dark-Blue: hsl(235, 21%, 11%);
-  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
-  --Light-Grayish-Blue: hsl(234, 39%, 85%);
-  --Light-Grayish-Blue: hsl(236, 33%, 92%); /* (hover)*/
-  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
-  --Very-Dark-Grayish-Blue-1: hsl(233, 14%, 35%);
-  --Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
-
-  /* ### Light Theme */
-
-  --Very-Light-Gray: hsl(0, 0%, 98%);
-  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
-  --Light-Grayish-Blue: hsl(233, 11%, 84%);
-  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
-  --Very-Dark-Grayish-Blue-3: hsl(235, 19%, 35%);
-}
 
 * {
   padding: 0;
@@ -28,16 +11,26 @@ html,
   width: 100%;
   height: 100vh;
   font-family: "Poppins", sans-serif;
-  background-color: var(--Very-Dark-Blue);
+  background-color: var(--body);
   overflow-x: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
   transition: all 0.5s ease;
+  --body: hsl(235, 21%, 11%);
+  --primary: hsl(235, 24%, 19%);
+  --text: hsl(234, 39%, 85%);
+  --image: url(./images/bg-desktop-dark.jpg);
+  --image-mobile: url(./images/bg-mobile-dark.jpg);
 }
 .body-light-mode {
-  background-color: var(--Very-Light-Gray);
+  background-color: var(--body);
   transition: all 0.5s ease;
+  --body: hsl(0, 0%, 98%);
+  --primary: hsl(236, 33%, 92%);
+  --text: hsl(235, 19%, 35%);
+  --image: url(./images/bg-desktop-light.jpg);
+  --image-mobile: url(./images/bg-mobile-light.jpg);
 }
 .header {
   width: 100%;
@@ -50,16 +43,10 @@ html,
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url(./images/bg-desktop-dark.jpg);
+  background-image: var(--image);
   transition: all 0.5s ease;
 }
-.header-light-mode {
-  background-image: url(./images/bg-desktop-light.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transition: all 0.5s ease;
-}
+
 .header h1 {
   font-size: 50px;
   font-weight: 700;
@@ -111,8 +98,8 @@ html,
   border-top-right-radius: 5px;
   border: none;
   outline: none;
-  background-color: var(--Light-Grayish-Blue);
-  color: var(--Very-Dark-Blue);
+  background-color: var(--body);
+  color: var(--text);
   cursor: pointer;
   font-size: 30px;
 }
@@ -129,16 +116,11 @@ html,
   border-top-left-radius: 5px;
   padding: 15px;
   outline: none;
-  background-color: var(--Very-Dark-Desaturated-Blue);
-  color: var(--Light-Grayish-Blue);
+  background-color: var(--primary);
+  color: var(--text);
   font-size: 16px;
   font-weight: 500;
   transition: all 0.5s ease;
-}
-.items-light-mode {
-  transition: all 0.5s ease;
-  background-color: var(--Very-Light-Gray);
-  color: var(--Dark-Grayish-Blue);
 }
 
 .clear-container {
@@ -150,25 +132,17 @@ html,
   background-color: var(--Very-Dark-Desaturated-Blue);
   margin-top: 20px;
 }
-
-.clear-container-light-mode {
-  background-color: var(--Very-Light-Gray);
-  color: var(--Dark-Grayish-Blue);
-}
-.clear-container-light-mode:hover {
-  color: var(--Very-Dark-Grayish-Blue-3);
-}
 .clear-items {
   width: 100px;
   height: 40px;
-  color: var(--Very-Dark-Grayish-Blue-1);
-  background-color: transparent;
+  color: var(--text);
+  background-color: var(--primary);
   outline: none;
   border: none;
   cursor: pointer;
 }
 .clear-items:hover {
-  color: var(--Light-Grayish-Blue);
+  color: red;
 }
 .list-container {
   display: flex;
@@ -185,25 +159,17 @@ html,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--Very-Dark-Desaturated-Blue);
-  color: var(--Light-Grayish-Blue);
+  background-color: var(--primary);
+  color: var(--text);
   width: 500px;
   height: auto;
   margin: 5px 0;
-  border-bottom: 1px solid var(--Very-Dark-Grayish-Blue-1);
   padding: 15px 20px;
   font-size: 16px;
   font-weight: 500;
-  box-shadow: -4px 5px 6px 5px rgba(0, 0, 0, 0.17);
-  -webkit-box-shadow: -4px 5px 6px 5px rgba(0, 0, 0, 0.17);
-  -moz-box-shadow: -4px 5px 6px 5px rgba(0, 0, 0, 0.17);
   transition: all 0.5s ease;
 }
-.list-light-mode {
-  background-color: var(--Very-Light-Gray);
-  color: var(--Very-Dark-Grayish-Blue-3);
-  transition: all 0.5s ease;
-}
+
 #btn-container {
   display: flex;
   align-items: center;
@@ -218,14 +184,11 @@ html,
   cursor: pointer;
 }
 .delete-btn i {
-  color: var(--Light-Grayish-Blue);
+  color: red;
 }
 @media screen and (max-width: 550px) {
   .header {
-    background-image: url(./images/bg-mobile-dark.jpg);
-  }
-  .header-light-mode {
-    background-image: url(./images/bg-mobile-light.jpg);
+    background-image: var(--image-mobile);
   }
   #title {
     justify-content: space-around;
