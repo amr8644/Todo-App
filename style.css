@@ -22,6 +22,7 @@ html,
   --text: hsl(234, 39%, 85%);
   --image: url(./images/bg-desktop-dark.jpg);
   --image-mobile: url(./images/bg-mobile-dark.jpg);
+  --theme: url(./images/icon-sun.svg);
 }
 .body-light-mode {
   background-color: var(--body);
@@ -31,6 +32,7 @@ html,
   --text: hsl(235, 19%, 35%);
   --image: url(./images/bg-desktop-light.jpg);
   --image-mobile: url(./images/bg-mobile-light.jpg);
+  --theme: url(./images/icon-moon.svg);
 }
 .header {
   width: 100%;
@@ -68,7 +70,7 @@ html,
   cursor: pointer;
 }
 .light-mode {
-  background-image: url(./images/icon-sun.svg);
+  background-image: var(--theme);
   background-repeat: no-repeat;
   background-size: cover;
   background-color: transparent;
@@ -77,7 +79,7 @@ html,
   transition: all 0.5s ease;
 }
 .dark-mode {
-  background-image: url(./images/icon-moon.svg);
+  background-image: var(--theme);
   background-repeat: no-repeat;
   background-size: cover;
   background-color: transparent;
